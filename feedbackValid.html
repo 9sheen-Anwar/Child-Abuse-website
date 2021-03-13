@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <script type="text/javascript">
+       
+        function validation()
+        {
+
+           if(document.myForm.name.value=="")
+                {
+                    alert("Enter Name!");
+                    document.myForm.name.focus() ;
+                    return false;
+                }
+            var emailID = document.myForm.myEmail.value;
+            var atPos = emailID.indexOf("@");
+            var dotPos = emailID.lastIndexOf(".");  
+            //alert(""+atPos);
+            //alert(""+dotPos);
+            if((atPos<1) || ((dotPos-atPos)<2))
+            {             
+                alert("Give proper format of email");
+                return false;
+            }  
+            var zipCode = document.myForm.zip.value;
+            //alert(""+zipCode);
+            if(zipCode=="" || isNaN(zipCode) document.myForm.zip.length!=6)
+                {
+                    alert("enter zip code in the format ######");
+                    return false;
+                }
+            return true;
+        }
+    </script>
+</head>
+<body>
+     <div id="feedback" style="background-color: #374c63;height: 667px;width:1348px;float:left">
+                <div style="background-color: grey;width:50%;height:80%;float:left;position: relative;top:10%;left:25%;margin-top: -5px">
+                   <form action="" method="post" name="myForm" onsubmit="validation();">
+                    <h1><center> Feedback</center> </h1>  
+                     <input type="text" name="name" width="30"  placeholder="Type Your Name" style="margin-left: 50px;line-height: 30px;margin-top: 20px;">
+                    <br/>
+                     <input type="text" width="30" name="myEmail" placeholder="Email" style="margin-left: 50px;line-height: 30px;margin-top: 20px">
+                    <br/>
+                     <input type="text" width="30"  placeholder="Phone No." style="margin-left: 50px;line-height: 30px;margin-top: 20px">
+                    <br/>
+                     <input type="text" width="30" name="zip" placeholder="Zip Code" style="margin-left: 50px;line-height: 30px;margin-top: 20px">
+                    <textarea rows="13" cols="48" style="margin-top: -201px;margin-left: 300px" placeholder="write your suggestion or comment here"></textarea>
+                    <input type="submit" name="submit" style="margin-left: 35%;margin-top: 10%" style="height: 20px;width:30px" >
+                    </form>
+                    
+                </div>
+             
+            </div>
+            
+</body>
+</html>

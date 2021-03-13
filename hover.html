@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hover</title>
+    <script type="text/javascript">
+        var count=0;
+        function sayHello()
+        {
+            alert("hello!!!");
+        }
+        function changeColor(x)
+        {
+            x.style.background="magenta";
+        }
+        function back(y)
+        {
+            y.style.background="red";
+        }
+        function counter(z)
+        {
+            count++;
+                document.getElementById("second").innerHTML = z+=1;
+
+            
+        }
+    </script>
+</head>
+<body>
+    <div style="height: 100px; width: 100px; top: 200px; left: 400px; position: relative; background: red;" onClick="sayHello();">
+        
+    </div>
+     <div id = "second" style="height: 100px; width: 100px;position: relative; top: 200px; left: 550px;  background: red;" onmouseover="changeColor(this);" onmouseout="back(this)" onmousemove="counter(this)">
+	<p id="second"></p>
+        
+    </div>
+    
+</body>
+</html>
